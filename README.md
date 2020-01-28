@@ -1,2 +1,2 @@
 # word-puzzle-checker
-Word Puzzle Cha=ecker
+Word Puzzle Checker
