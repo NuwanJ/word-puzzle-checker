@@ -4,7 +4,7 @@ var thisWords = new Array();
 var rows = 0; // number of rows in the puzzle
 var columns = 0; // number of columns in the puzzle
 
-var foundLeft = '00FF00';
+var foundLeft = '789615';
 var foundRight = '154893';
 var foundUpDown = 'FF0069';
 var foundDownUp = 'FF5900';
