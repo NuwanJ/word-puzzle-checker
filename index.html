@@ -2,6 +2,8 @@
   <head>
     <title>Word Search Puzzle</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Load JavaScript libraries -->
     <script src="js/jquery-1.10.1.min.js" type="text/javascript"></script>
     <script src="js/puzzle.js" type="text/javascript"></script>
@@ -12,12 +14,12 @@
 			table#puzzle td { width:20px; border: 1px solid }
 
       #words{
-        width:100%;
+        width:90%;
         height: 50vh;
       }
 
       #puzzleText{
-        width: 100%;
+        width: 90%;
         height: 50vh;
 
       }
@@ -27,8 +29,9 @@
     <!-- Input content -->
     <div id="step1" class="w3-container">
       <div class="w3-row">
-        <div class="w3-col s6 m6 l6" >
-          Words list: <textarea id="words">
+        <div class="w3-col s12 m6 l6" >
+          Words list: <br>
+          <textarea id="words">
             HESTIA
             PERSEPHONE
             APHRODITE
@@ -38,8 +41,9 @@
             Calypso
             Eileithyia
           </textarea>
-
-          Puzzle: <textarea id="puzzleText">
+          <br>
+          Puzzle: <br>
+          <textarea id="puzzleText">
             'IQQKPMQZFUPWQLCMSDFA'
             'UHZKSLAUGAWEWAIGFYBK'
             'VZOATCSIWBSFLDBLHWMG'
@@ -62,27 +66,41 @@
             'AUCRYQAUEJUBVFDIERMD'
           </textarea><br />
         </div>
-        <div class="w3-col s6 m6 l6" >
-          <input type="button" name="toStep2" value="Continue" id="toStep2" onclick="doIt();" />
+        <div class="w3-col s12 m6 l6" >
+          <input class="w3-button w3-large w3-gray w3-padding-16" type="button" name="toStep2" value="Solve" id="toStep2" onclick="doIt();" />
   
 
         <!-- Result content -->
         <div id="step2">
-          Found :<input type="text" name="wFound" value="0" id="wFound" /> / <span id="wTotal"></span><br />
-          Not found: <div id="nFound"></div>
-          Solution: <div id="pSolution"></div>
+          <br>
 
+          <table>
+            <tr>
+              <td>Found</td>
+              <td><input type="text" name="wFound" value="0" id="wFound" /></td>
+            </tr>
+            <tr>
+              <td>Not found</td>
+              <td><input type="text" name="wFound" value="" id="nFound" /></div></td>
+            </tr>
+
+            <tr>
+              <td>Solutions</td>
+              <td><div class="w3-container" id="foundList"></td>
+            </tr>
+          </table>
           <br><br><br>
+
+          <table id="puzzle"></table>
+
           
-    
-            <table id="puzzle"></table>
-     
-          
+
+          </div>
         </div>
         </div>
       </div>
 </div>
       
-        <br><br><br> <br><br><br> <br><br><br>
+        <br><br><br> 
   </body>
 </html>

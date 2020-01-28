@@ -25,13 +25,15 @@ function loadPuzzle(){
   var i, j = 0; // indexes
   var rebuild = false; // rebuild puzzle (new columnds, rows..)
 
+  $("#foundList").html("");
+  $('#puzzle').val("");
   $("#puzzleText").val($("#puzzleText").val().replace(/ /g,''));
   $("#words").val($("#words").val().replace(/ /g,'').toUpperCase());
   
   // read words
   if (thisWords.length != $("#words").val().split('\n').length) {
     thisWords = $("#words").val().split('\n');
-    $("span#wTotal").html(thisWords.length);
+    //$("span#wTotal").html(thisWords.length-1);
     rebuild = true;
   }
   
@@ -66,6 +68,7 @@ function solvePuzzle(){
     var j=0; // index for the puzzle rows
     var k=0; // index for the puzzle columns
     var fChar = ''; // first character
+    foundW = 0;
     
     for (i=0; i < wL; ++i) {
       // search all words
@@ -84,6 +87,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found Left > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+
               break wordFound; // word found, break loops
             } 
             
@@ -94,6 +99,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found Right > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+
               break wordFound; // word found, break loops
             }
             
@@ -102,6 +109,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found Up > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+              
               break wordFound; // word found, break loops
             }
             
@@ -110,6 +119,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found Down > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+              
               break wordFound; // word found, break loops
             }
             
@@ -118,6 +129,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found upLeft > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+              
               break wordFound; // word found, break loops
             }
             
@@ -126,6 +139,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found upRight > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+              
               break wordFound; // word found, break loops
             }
             
@@ -134,6 +149,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found downLeft > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+              
               break wordFound; // word found, break loops
             }
             
@@ -142,6 +159,8 @@ function solvePuzzle(){
             if (false !== res) {
               $("table#puzzle tr#r"+j+" td#c"+(k+1)).css('background-color', this.foundCharacterColor).attr('rel', 'X');
               console.log("found downRight > " + thisWords[i]); foundW++;
+              $("#foundList").append(thisWords[i] + "<br>");
+              
               break wordFound; // word found, break loops
             }
             
